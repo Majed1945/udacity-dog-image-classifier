@@ -23,14 +23,14 @@
 ##
 
 # Imports python modules
-from time import time, sleep
+from time import time
 
 # Imports print functions that check the lab
 from print_functions_for_lab_checks import *
 
 # Imports functions created for this program
 from get_input_args import get_input_args
-# from get_pet_labels import get_pet_labels
+from get_pet_labels import get_pet_labels
 # from classify_images import classify_images
 # from adjust_results4_isadog import adjust_results4_isadog
 # from calculates_results_stats import calculates_results_stats
@@ -41,7 +41,6 @@ def main():
     # Measures total program runtime by collecting start time
     start_time = time()
     
-    # TODO 1: Define get_input_args function within the file get_input_args.py
     # This function retrieves 3 Command Line Arugments from user as input from
     # the user running the program from a terminal window. This function returns
     # the collection of these command line arguments from the function call as
@@ -51,17 +50,12 @@ def main():
     check_command_line_arguments(in_arg)
 
     
-    # TODO 2: Define get_pet_labels function within the file get_pet_labels.py
-    # Once the get_pet_labels function has been defined replace 'None' 
-    # in the function call with in_arg.dir  Once you have done the replacements
-    # your function call should look like this: 
-    #             get_pet_labels(in_arg.dir)
     # This function creates the results dictionary that contains the results, 
     # this dictionary is returned from the function call as the variable results
-    # results = get_pet_labels(None)
+    results = get_pet_labels(in_arg.dir)
 
     # Function that checks Pet Images in the results Dictionary using results    
-    # check_creating_pet_image_labels(results)
+    check_creating_pet_image_labels(results)
 
 
     # TODO 3: Define classify_images function within the file classiy_images.py
