@@ -32,7 +32,7 @@ from print_functions_for_lab_checks import *
 from get_input_args import get_input_args
 from get_pet_labels import get_pet_labels
 from classify_images import classify_images
-# from adjust_results4_isadog import adjust_results4_isadog
+from adjust_results4_isadog import adjust_results4_isadog
 # from calculates_results_stats import calculates_results_stats
 # from print_results import print_results
 
@@ -63,19 +63,12 @@ def main():
     # Function that checks Results Dictionary using results    
     check_classifying_images(results)    
 
-    
-    # TODO 4: Define adjust_results4_isadog function within the file adjust_results4_isadog.py
-    # Once the adjust_results4_isadog function has been defined replace 'None' 
-    # in the function call with in_arg.dogfile  Once you have done the 
-    # replacements your function call should look like this: 
-    #          adjust_results4_isadog(results, in_arg.dogfile)
-    # Adjusts the results dictionary to determine if classifier correctly 
+    # This function adjusts the results dictionary to determine if classifier correctly 
     # classified images as 'a dog' or 'not a dog'. This demonstrates if 
     # model can correctly classify dog images as dogs (regardless of breed)
-    # adjust_results4_isadog(results, None)
-
+    adjust_results4_isadog(results, in_arg.dogfile)
     # Function that checks Results Dictionary for is-a-dog adjustment using results
-    # check_classifying_labels_as_dogs(results)
+    check_classifying_labels_as_dogs(results)
 
 
     # TODO 5: Define calculates_results_stats function within the file calculates_results_stats.py

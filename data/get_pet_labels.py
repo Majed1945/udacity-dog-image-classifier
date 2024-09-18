@@ -40,34 +40,34 @@ def get_pet_labels(image_dir):
       List. The list contains for following item:
          index 0 = pet image label (string)
     """
-    ## Retrieve the filenames according to the dictionary selected by the user
+    # Retrieve the filenames according to the dictionary selected by the user
     filename_list = listdir(image_dir)
     
-    ## Creates empty dictionary named results_dic
+    # Creates empty dictionary named results_dic
     results_dic = dict()
 
-    ## Iterate over the file names and create the results dictionary 
+    # Iterate over the file names and create the results dictionary 
     for index in range(0,len(filename_list),1):
-        ## Sets pet_file_name variable to a filename 
+        # Sets pet_file_name variable to a filename 
         pet_file_name = filename_list[index]
 
-        ## Sets string to lower case letters
+        # Sets string to lower case letters
         lower_case_file_name = pet_file_name.lower()
 
-        ## Splits lower case string by _ to break into words 
+        # Splits lower case string by _ to break into words 
         word_list_file_name = lower_case_file_name.split("_")
 
-        ## Create pet_label starting as empty string
+        # Create pet_label starting as empty string
         pet_label = ""
         
-        ## Loops to check if word in file name is only
-        ## alphabetic characters - if true append word
-        ## to pet_label separated by trailing space 
+        # Loops to check if word in file name is only
+        # alphabetic characters - if true append word
+        # to pet_label separated by trailing space 
         for word in word_list_file_name:
           if word.isalpha():
             pet_label += word + " "
 
-        ## Strip off starting/trailing whitespace characters 
+        # Strip off starting/trailing whitespace characters 
         pet_label = pet_label.strip()
 
         if (filename_list[index] not in results_dic):

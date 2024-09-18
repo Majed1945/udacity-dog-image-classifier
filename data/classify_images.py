@@ -60,19 +60,19 @@ def classify_images(images_dir, results_dic, model):
            None - results_dic is mutable data type so no return needed.         
     """
     for item in results_dic:
-        ## Set the string variable model_label to be the string that's 
-        ## returned from using the classifier function
+        # Set the string variable model_label to be the string that's 
+        # returned from using the classifier function
         model_label = classifier(images_dir+item,model)
 
-        ## Process the model_label to convert all characters within model_label to lowercase 
-        ## letters and then remove whitespace characters from the ends
-        ## of model_label.
+        # Process the model_label to convert all characters within model_label to lowercase 
+        # letters and then remove whitespace characters from the ends
+        # of model_label.
         model_label=model_label.lower().strip()
 
-        ## Defines truth as pet image label 
+        # Defines truth as pet image label 
         truth = results_dic[item][0]
         
-        ## Compare the model classification with the truth value and update the dictionary
+        # Compare the model classification with the truth value and update the dictionary
         if(truth in model_label):
             results_dic[item].extend([model_label, 1])
         else:   
