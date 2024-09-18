@@ -17,7 +17,7 @@
 #
 ##
 # Imports python modules
-from os import listdir,path
+from os import listdir
 
 # TODO 2: Define get_pet_labels function below please be certain to replace None
 #       in the return statement with results_dic dictionary that you create 
@@ -71,7 +71,8 @@ def get_pet_labels(image_dir):
         pet_label = pet_label.strip()
 
         if (filename_list[index] not in results_dic):
-            results_dic[filename_list[index]]=pet_label
+            results_dic[filename_list[index]]=[pet_label]
+
         else:
             print("Duplicate files exist in the directory:", 
                      filename_list[index])

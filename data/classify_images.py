@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # */AIPND-revision/intropyproject-classify-pet-images/classify_images.py
 #                                                                             
-# PROGRAMMER: 
-# DATE CREATED:                                 
+# PROGRAMMER: Majed Biazid
+# DATE CREATED: 18 September 2024                                 
 # REVISED DATE: 
 # PURPOSE: Create a function classify_images that uses the classifier function 
 #          to create the classifier labels and then compares the classifier 
@@ -23,12 +23,6 @@
 # Imports classifier function for using CNN to classify images 
 from classifier import classifier 
 
-# TODO 3: Define classify_images function below, specifically replace the None
-#       below by the function definition of the classify_images function. 
-#       Notice that this function doesn't return anything because the 
-#       results_dic dictionary that is passed into the function is a mutable 
-#       data type so no return is needed.
-# 
 def classify_images(images_dir, results_dic, model):
     """
     Creates classifier labels with classifier function, compares pet labels to 
@@ -65,4 +59,24 @@ def classify_images(images_dir, results_dic, model):
      Returns:
            None - results_dic is mutable data type so no return needed.         
     """
-    None 
+    for item in results_dic:
+        ## Set the string variable model_label to be the string that's 
+        ## returned from using the classifier function
+        model_label = classifier(images_dir+item,model)
+
+        ## Process the model_label to convert all characters within model_label to lowercase 
+        ## letters and then remove whitespace characters from the ends
+        ## of model_label.
+        model_label=model_label.lower().strip()
+
+        ## Defines truth as pet image label 
+        truth = results_dic[item][0]
+        
+        ## Compare the model classification with the truth value and update the dictionary
+        if(truth in model_label):
+            results_dic[item].extend([model_label, 1])
+        else:   
+            results_dic[item].extend([model_label, 0])
+
+            
+     
