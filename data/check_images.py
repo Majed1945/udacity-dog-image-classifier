@@ -34,7 +34,7 @@ from get_pet_labels import get_pet_labels
 from classify_images import classify_images
 from adjust_results4_isadog import adjust_results4_isadog
 from calculates_results_stats import calculates_results_stats
-# from print_results import print_results
+from print_results import print_results
 
 # Main program function defined below
 def main():
@@ -80,16 +80,9 @@ def main():
     # Function that checks Results Statistics Dictionary using results_stats
     check_calculating_results(results, results_stats)
 
-
-    # TODO 6: Define print_results function within the file print_results.py
-    # Once the print_results function has been defined replace 'None' 
-    # in the function call with in_arg.arch  Once you have done the 
-    # replacements your function call should look like this: 
-    #      print_results(results, results_stats, in_arg.arch, True, True)
     # Prints summary results, incorrect classifications of dogs (if requested)
     # and incorrectly classified breeds (if requested)
-    # print_results(results, results_stats, None, True, True)
-    
+    print_results(results, results_stats, in_arg.arch, True, True)    
     # Measure total program runtime by collecting end time
     end_time = time()
     
