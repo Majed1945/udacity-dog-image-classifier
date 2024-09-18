@@ -25,12 +25,7 @@
 #             False in the function call within main (defaults to False)
 #         This function does not output anything other than printing a summary
 #         of the final results.
-##
-# TODO 6: Define print_results function below, specifically replace the None
-#       below by the function definition of the print_results function. 
-#       Notice that this function doesn't to return anything because it  
-#       prints a summary of the results using results_dic and results_stats_dic
-# 
+
 def print_results(results_dic, results_stats_dic, model, 
                   print_incorrect_dogs = False, print_incorrect_breed = False):
     """
@@ -87,10 +82,9 @@ def print_results(results_dic, results_stats_dic, model,
         for key in results_dic:
             # Pet Image Label is a Dog - Classified as NOT-A-DOG -OR- 
             # Pet Image Label is NOT-a-Dog - Classified as a-DOG
-            for key in results_dic:
-                if(results_dic[3]!=results_dic[4]):
-                    print("Real: {:>26}   Classifier: {:>30}".format(results_dic[key][3],
-                                                          results_dic[key][4]))
+            if(results_dic[key][3]!=results_dic[key][4]):
+                print("Real: {:>26}   Classifier: {:>30}".format(results_dic[key][0],
+                                                          results_dic[key][1]))
 
     # IF print_incorrect_breed == True AND there were dogs whose breeds 
     # were incorrectly classified - print out these cases                    
